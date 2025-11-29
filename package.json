@@ -1,0 +1,59 @@
+{
+  "name": "electricmap-bogota",
+  "version": "1.0.0",
+  "description": "Mapa de estaciones de carga para vehículos eléctricos en Bogotá",
+  "author": "ElectricMap Team",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "ionic:build": "ng build",
+    "ionic:serve": "ng serve",
+    "cap:add:android": "npx cap add android",
+    "cap:copy": "npx cap copy",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android",
+    "build:android": "npm run build:prod && npx cap sync android"
+  },
+  "dependencies": {
+    "@angular/animations": "^17.3.0",
+    "@angular/common": "^17.3.0",
+    "@angular/compiler": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/forms": "^17.3.0",
+    "@angular/platform-browser": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/router": "^17.3.0",
+    "@capacitor/android": "^5.7.0",
+    "@capacitor/app": "^5.0.7",
+    "@capacitor/core": "^5.7.0",
+    "@capacitor/geolocation": "^5.0.7",
+    "@capacitor/haptics": "^5.0.7",
+    "@capacitor/keyboard": "^5.0.8",
+    "@capacitor/status-bar": "^5.0.7",
+    "@ionic/angular": "^7.8.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "ionicons": "^7.2.2",
+    "leaflet": "^1.9.4",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.6.2",
+    "zone.js": "^0.14.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.0",
+    "@angular/cli": "^17.3.0",
+    "@angular/compiler-cli": "^17.3.0",
+    "@capacitor/cli": "^5.7.0",
+    "@ionic/angular-toolkit": "^11.0.1",
+    "@types/leaflet": "^1.9.8",
+    "typescript": "~5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

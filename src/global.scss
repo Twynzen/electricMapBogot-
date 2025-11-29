@@ -1,0 +1,296 @@
+/**
+ * ElectricMap Bogotá - Global Styles
+ */
+
+// Ionic core CSS
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+// Ionic optional CSS
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+// ============================================
+// Global Custom Styles
+// ============================================
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+// Links
+a {
+  color: var(--ion-color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ============================================
+// Map Styles
+// ============================================
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+// Leaflet overrides for Ionic
+.leaflet-container {
+  font-family: var(--ion-font-family);
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  font-size: 20px !important;
+}
+
+// ============================================
+// Station Marker Styles
+// ============================================
+
+.station-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ion-color-primary);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--available {
+    background: var(--charging-available);
+  }
+
+  &--busy {
+    background: var(--charging-busy);
+    color: #000;
+  }
+
+  &--unavailable {
+    background: var(--charging-unavailable);
+  }
+
+  &--unknown {
+    background: var(--charging-unknown);
+  }
+}
+
+// ============================================
+// Card Styles
+// ============================================
+
+.station-card {
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 8px;
+
+  ion-card-header {
+    padding-bottom: 8px;
+  }
+
+  ion-card-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  ion-card-subtitle {
+    font-size: 14px;
+    color: var(--ion-color-medium);
+  }
+}
+
+// ============================================
+// Connector Badge Styles
+// ============================================
+
+.connector-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--ion-color-light);
+  color: var(--ion-color-dark);
+  margin: 2px;
+
+  &--type2 {
+    background: rgba(26, 115, 232, 0.15);
+    color: var(--connector-type2);
+  }
+
+  &--ccs {
+    background: rgba(52, 168, 83, 0.15);
+    color: var(--connector-ccs);
+  }
+
+  &--chademo {
+    background: rgba(234, 67, 53, 0.15);
+    color: var(--connector-chademo);
+  }
+}
+
+// ============================================
+// Status Indicator
+// ============================================
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  &--available::before {
+    background: var(--charging-available);
+  }
+
+  &--busy::before {
+    background: var(--charging-busy);
+  }
+
+  &--unavailable::before {
+    background: var(--charging-unavailable);
+  }
+
+  &--unknown::before {
+    background: var(--charging-unknown);
+  }
+}
+
+// ============================================
+// Utility Classes
+// ============================================
+
+.text-muted {
+  color: var(--ion-color-medium);
+}
+
+.text-success {
+  color: var(--ion-color-success);
+}
+
+.text-warning {
+  color: var(--ion-color-warning);
+}
+
+.text-danger {
+  color: var(--ion-color-danger);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+// ============================================
+// Loading States
+// ============================================
+
+.skeleton-text {
+  background: linear-gradient(
+    90deg,
+    var(--ion-color-step-100) 25%,
+    var(--ion-color-step-200) 50%,
+    var(--ion-color-step-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// ============================================
+// Responsive Adjustments
+// ============================================
+
+@media (max-width: 576px) {
+  .station-card {
+    margin: 4px;
+
+    ion-card-title {
+      font-size: 16px;
+    }
+  }
+
+  .leaflet-popup-content {
+    font-size: 13px;
+  }
+}
+
+// Tablet and larger
+@media (min-width: 768px) {
+  .station-card {
+    max-width: 400px;
+  }
+}

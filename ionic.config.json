@@ -1,0 +1,7 @@
+{
+  "name": "electricmap-bogota",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
